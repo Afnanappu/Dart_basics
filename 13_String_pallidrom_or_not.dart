@@ -2,23 +2,25 @@
 
 import 'dart:io';
 
-int main(){
+int main() {
   print("Enter a string to find it is palindrome or not ");
   stdout.write(">>");
-  String? str = stdin.readLineSync()??'0';
+  String str = stdin.readLineSync() ?? '';
+
+// (str.split('').reversed.join() == str)? print("is palindrome"): print("not palindrome");
+
   int len = str.length;
   bool isPalindrome = true;
-  for(int i=0; i<len; i++){
-    if(str[i] != str[len-i-1]){
+  for (int i = 0; i < len; i++) {
+    if (str[i] != str[len - i - 1]) {
       isPalindrome = false;
     }
   }
-  if(isPalindrome){
+  if (isPalindrome) {
     print("The string '$str' is palindrome");
-  }
-  else{
+  } else {
     print("Not palindrome");
   }
 
-return 0;
+  return 0;
 }
